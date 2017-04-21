@@ -143,9 +143,9 @@ loop:
 
 func main() {
 	numCattle := flag.Int("c", 8, "number of threads")
-	duration := flag.Duration("t", 1*time.Minute, "total duration to run test")
+	duration := flag.Duration("d", 1*time.Minute, "total duration to run test")
 	configFile := flag.String("f", "", "file with URLs, one per line")
-	staggerDelay := flag.Duration("d", staggerMin, "Delay a random time between 1s and this before starting each worker")
+	staggerDelay := flag.Duration("delay", staggerMin, "Delay a random time between 1s and this before starting each worker")
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage:\n"+
 			"  %s [flags ...] url1 url2 ...\n"+
